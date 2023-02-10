@@ -1,16 +1,15 @@
-// import AboutPage from './pages/AboutPage'
-// import ProductsPage from './pages/ProductsPage'
+import AboutPage from './pages/AboutPage'
+import ProductsPage from './pages/ProductsPage'
 import Home from "./pages/Home"
-// import Link from "./components/Link"
-import useNavigationContext from "./Hooks/useNavigationContext"
+import Route from "./components/Route"
 
 const App = () => {
-    const {pathName} = useNavigationContext()
 
     return (
         <div>
-            {pathName}
-            <Home/>
+            <Route path="/"><Home/></Route>
+            <Route path="/about"><AboutPage/></Route>
+            <Route path="/products"><ProductsPage/></Route>
         </div>
     )
 }

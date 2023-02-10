@@ -1,9 +1,15 @@
-const Link = ({children}) => {
-    
+import useNavigationContext from "../Hooks/useNavigationContext"
+
+const Link = ({to, children}) => {
+    const {Navigate} = useNavigationContext()
+    const handleClick = e => {
+      e.preventDefault()
+      Navigate(to)
+    }
 
   return (
     <div>
-        <div to="">{children}</div>
+        <div onClick={handleClick}>{children}</div>
     </div>
   )
 }
